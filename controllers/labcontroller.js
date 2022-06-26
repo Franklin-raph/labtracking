@@ -113,7 +113,7 @@ module.exports = {
     getLabs,
     searchLab,
     reportLabIssue,
-    getLabsIssues
+    getLabsIssues,
 }
 
 // big-shoulder-display

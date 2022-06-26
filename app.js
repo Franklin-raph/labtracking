@@ -6,14 +6,30 @@ const { dbConnectinMethod } = require('./config/db')
 
 const app = express();
 
-// middlewares
+// middlewares and static files
+app.use(express.static('public'))
 app.use(morgan('dev'))
 app.use(express.json());
-
 app.use('/lab', require('./routes/labroutes'))
 
+app.set('view engine', 'ejs')
+
 app.get('/', (req, res) => {
-    res.send("Hello world")
+    res.render('index', {title: 'Home'})
+})
+
+app.get('/about', (req, res) => {
+    res.render('about', {title: 'About'})
+})
+
+
+
+app.get('/registerLab', (req, res) => {
+    res.render('labs/registerLab', { title : 'Register'})
+})
+
+app.use((req, res) =>{
+    res.status(404).render('404', {title: '404'})
 })
 
 const port = process.env.PORT || 5050
