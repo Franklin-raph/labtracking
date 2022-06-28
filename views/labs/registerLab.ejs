@@ -6,6 +6,28 @@
         <%- include('../partials/nav.ejs') %>
 
         <p>Register Lab Page</p>
+        <form action="/registeLab" method="POST">
+            <label for="Name">Name</label>
+            <input type="text" name="name" id="" required>
+
+            <label for="Name">Building Number</label>
+            <input type="text" name="buildingNumber" id="" required>
+
+            <label for="Name">floorNumber</label>
+            <input type="text" name="floorNumber" id="" required>
+
+            <label for="Name">numberOfPC</label>
+            <input type="text" name="numberOfPC" id="" required>
+
+            <label for="Capacity">Capacity</label>
+            <input type="text" name="capacity" id="" required>
+
+            <label for="Number Of Chairs">Number Of Chairs</label>
+            <input type="text" name="numberOfChairs" id="" required>
+
+            <label for="Status">Status</label>
+            <input type="text" name="status" id="" required>
+        </form>
         
         <%- include('../partials/footer.ejs') %>
     </body>
